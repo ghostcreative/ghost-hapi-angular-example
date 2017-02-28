@@ -1,0 +1,53 @@
+{
+  "version": "2",
+  "services": {
+    "web": {
+      "image": "ghostcreative/hapi-angular-web:latest",
+      "ports": [
+        "80:80"
+      ],
+      "volumes": [
+        "./src/web/public:/usr/share/nginx/html:ro"
+      ],
+      "links": [
+        "server:server.hapi-angular-docker"
+      ]
+    },
+    "server": {
+      "image": "ghostcreative/hapi-angular-server:latest",
+      "volumes": [
+        "./src/config:/app/config",
+        "./src/server:/app/server",
+        "server-node-modules:/app/server/node_modules",
+        "./src/services:/app/services",
+        "services-node-modules:/app/services/node_modules"
+      ],
+      "links": [
+        "mysql:mysql.hapi-angular-docker"
+      ],
+      "ports": [
+        "4000:4000"
+      ],
+      "environment": {
+        "NODE_ENV": "docker",
+        "NODE_CONFIG_DIR": "/app/config"
+      },
+      "depends_on": [
+        "mysql"
+      ]
+    },
+    "mysql": {
+      "image": "mysql:5.7",
+      "ports": [
+        "3306:3306"
+      ],
+      "environment": {
+        "MYSQL_ROOT_PASSWORD": "password"
+      }
+    }
+  },
+  "volumes": {
+    "services-node-modules": null,
+    "server-node-modules": null
+  }
+}
