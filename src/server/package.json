@@ -1,38 +1,22 @@
 {
-  "name": "ghost-hapi-angular-example-server",
+  "name": "ghost-hapi-angular-server",
   "version": "1.0.0",
   "description": "A sample application for ghost angular2 applications running on the ghost-hapi-server module.",
+  "main": "index.js",
   "scripts": {
-    "start": "node bin/startWebServer.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "ghostcreative",
     "hapijs",
     "angular2"
   ],
-  "dependencies": {
-    "bcryptjs": "^2.4.0",
-    "bluebird": "^3.4.1",
-    "boom": "^4.2.0",
-    "chance": "^1.0.4",
-    "config": "^1.21.0",
-    "email-templates": "^2.5.4",
-    "ghost-hapi-controller": "^1.0.0",
-    "ghost-hapi-server": "^1.0.0",
-    "hapi-auth-jwt": "^4.0.0",
-    "hapi-cors-headers": "^1.0.0",
-    "hapi-forward": "^1.0.0",
-    "inject-then": "^2.0.8",
-    "joi": "^10.1.0",
-    "lodash": "^4.16.4"
-  },
   "author": "Ghost Creative",
-  "license": "MIT",
-  "homepage": "www.ghostcreative.io",
-  "devDependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^3.2.0",
-    "supertest": "^1.2.0",
-    "supertest-as-promised": "^4.0.0"
+  "license": "ISC",
+  "dependencies": {
+    "angular2": "^2.0.0-beta.21",
+    "angular2-hapi-engine": "^0.15.0",
+    "inert": "^4.1.0",
+    "vision": "^4.1.1"
   }
 }
